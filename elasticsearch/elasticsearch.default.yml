@@ -1,0 +1,15 @@
+network:
+  bind_host: 0.0.0.0
+
+http:
+  port: 9200
+
+transport:
+  tcp:
+    port: 9300
+
+path:
+  data: /data/data
+  logs: /data/log
+  plugins: /elasticsearch/plugins
+  work: /data/work
