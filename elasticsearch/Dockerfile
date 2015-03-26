@@ -1,10 +1,10 @@
 FROM quay.io/devops/jre
 MAINTAINER António Meireles <antonio.meireles@reformi.st>
 
-ENV ES_VERSION 1.4.4
+ENV ES_VERSION 1.5.0
 ENV ES_URL https://download.elasticsearch.org/elasticsearch/elasticsearch
 
-ENV KP_VERSION 1.0.3
+ENV KP_VERSION 1.1.0
 ENV KP_URL io.fabric8/elasticsearch-cloud-kubernetes
 
 ENV ES_HOME /elasticsearch
