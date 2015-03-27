@@ -23,13 +23,15 @@
         + **59 MB** *vs* the 424 MB size of the *upstream* official one.
 
 ###### elasticsearch
+> this set, unlike the ones above, is based, for now, on top of [progrium/busybox](https://github.com/progrium/busybox) and not [gliderlabs/docker-alpine](https://github.com/gliderlabs/docker-alpine) so that we can consume java8.
+
 - **quay.io/devops/elasticsearch**  
         [![Docker Repository on Quay.io]
         (https://quay.io/repository/devops/elasticsearch/status "Docker
         Repository on Quay.io")]
         (https://quay.io/repository/devops/elasticsearch)
     - lightweight, kubernetes aware, elasticsearch *base* container.
-        + *just* **170 MB**...
+        + *just* **146 MB**...
 - **quay.io/devops/elasticsearch-master**  
         [![Docker Repository on Quay.io]
         (https://quay.io/repository/devops/elasticsearch-master/status
