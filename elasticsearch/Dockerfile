@@ -1,18 +1,18 @@
 FROM progrium/busybox
 MAINTAINER António Meireles <antonio.meireles@reformi.st>
 
-ENV ES_VERSION 1.5.0
+ENV ES_VERSION 1.5.2
 ENV ES_URL https://download.elasticsearch.org/elasticsearch/elasticsearch
 
-ENV KP_VERSION 1.1.0
+ENV KP_VERSION 1.1.1
 ENV KP_URL io.fabric8/elasticsearch-cloud-kubernetes
 
 ENV ES_HOME /elasticsearch
 
 ENV JRE_MAJOR 8
-ENV JRE_MINOR 40
+ENV JRE_MINOR 45
 ENV JRE_VERSION ${JRE_MAJOR}u${JRE_MINOR}
-ENV JRE_BUILD b26
+ENV JRE_BUILD b14
 ENV JAVA_HOME /opt/jre1.${JRE_MAJOR}.0_${JRE_MINOR}
 ENV JRE_URL http://download.oracle.com/otn-pub/java/jdk/$JRE_VERSION-$JRE_BUILD/jre-$JRE_VERSION-linux-x64.tar.gz
 
@@ -22,7 +22,7 @@ EXPOSE 9200 9300
 RUN ( opkg-install curl grep bash coreutils diffutils procps ca-certificates && \
       curl -Lskj -b "oraclelicense=accept-securebackup-cookie" $JRE_URL | \
       gunzip -c - | tar xf - ) && \
-    mv jre1.8.0_40 /opt/ && \
+    mv jre1.${JRE_MAJOR}.0_${JRE_MINOR} /opt/ && \
     ( curl -Lskj ${ES_URL}/elasticsearch-${ES_VERSION}.tar.gz | gunzip -c - | tar xf - ) && \
     mv elasticsearch-${ES_VERSION} ${ES_HOME} && \
     bash -c 'rm -rf ${JAVA_HOME}/{lib/{desktop,locale,{,oblique-}fonts,deploy,fontconfig.*},plugin,man/} && \
